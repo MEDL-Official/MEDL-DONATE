@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MEDL — Donate</title>
-  <meta name="description" content="Поддержать проект MEDL криптовалютой.">
+  <meta name="description" content="Поддержи MEDL криптовалютой.">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -61,6 +61,7 @@
         );
 
       color: var(--text);
+
       font-family:
         Inter,
         -apple-system,
@@ -73,10 +74,12 @@
     .page {
       width: min(920px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 58px 0 70px;
+      padding: 50px 0 70px;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       text-align: center;
@@ -84,32 +87,35 @@
     }
 
     .logo {
-      width: 58px;
-      height: 58px;
+      width: 88px;
+      height: 88px;
 
       margin: 0 auto 18px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 17px;
+      border-radius: 50%;
 
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          #dceaf1
-        );
+      background: #08111a;
 
-      color: #071019;
+      border: 1px solid rgba(8, 185, 255, 0.28);
 
-      font-size: 23px;
-      font-weight: 850;
-      letter-spacing: -1px;
+      overflow: hidden;
 
       box-shadow:
-        0 0 0 1px rgba(255,255,255,.15),
-        0 10px 35px rgba(0,0,0,.35);
+        0 0 0 1px rgba(8, 185, 255, 0.08),
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 0 28px rgba(8, 185, 255, 0.10);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
     }
 
     h1 {
@@ -144,10 +150,12 @@
       background: var(--blue);
 
       box-shadow:
-        0 0 14px rgba(8,185,255,.45);
+        0 0 14px rgba(8, 185, 255, 0.45);
     }
 
-    /* WALLETS */
+    /* =========================
+       WALLETS
+    ========================= */
 
     .wallets {
       display: grid;
@@ -170,14 +178,14 @@
       border-radius: 18px;
 
       box-shadow:
-        0 18px 45px rgba(0,0,0,.22);
+        0 18px 45px rgba(0, 0, 0, 0.22);
 
       overflow: hidden;
 
       transition:
-        border-color .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .wallet::before {
@@ -194,7 +202,7 @@
       background: linear-gradient(
         180deg,
         var(--blue),
-        rgba(8,185,255,.15)
+        rgba(8, 185, 255, 0.15)
       );
     }
 
@@ -204,8 +212,8 @@
       border-color: #24506b;
 
       box-shadow:
-        0 22px 55px rgba(0,0,0,.28),
-        0 0 28px rgba(8,185,255,.035);
+        0 22px 55px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(8, 185, 255, 0.035);
     }
 
     .wallet-top {
@@ -221,7 +229,7 @@
     .wallet-name {
       font-size: 18px;
       font-weight: 750;
-      letter-spacing: -.2px;
+      letter-spacing: -0.2px;
     }
 
     .network {
@@ -242,11 +250,11 @@
 
       color: #a9bac6;
 
-      background: rgba(255,255,255,.02);
+      background: rgba(255, 255, 255, 0.02);
 
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .3px;
+      letter-spacing: 0.3px;
     }
 
     .wallet-content {
@@ -256,7 +264,9 @@
       gap: 22px;
     }
 
-    /* QR */
+    /* =========================
+       QR
+    ========================= */
 
     .qr {
       flex: 0 0 154px;
@@ -274,7 +284,7 @@
       border-radius: 13px;
 
       box-shadow:
-        0 8px 24px rgba(0,0,0,.28);
+        0 8px 24px rgba(0, 0, 0, 0.28);
     }
 
     .qr img {
@@ -284,7 +294,9 @@
       height: 136px !important;
     }
 
-    /* ADDRESS */
+    /* =========================
+       ADDRESS
+    ========================= */
 
     .wallet-info {
       min-width: 0;
@@ -299,14 +311,14 @@
       font-size: 10px;
       font-weight: 700;
 
-      letter-spacing: .7px;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
     }
 
     .address {
       padding: 13px 14px;
 
-      background: rgba(3,7,11,.65);
+      background: rgba(3, 7, 11, 0.65);
 
       border: 1px solid var(--border-soft);
       border-radius: 11px;
@@ -325,7 +337,9 @@
       word-break: break-all;
     }
 
-    /* BUTTON */
+    /* =========================
+       BUTTON
+    ========================= */
 
     button {
       width: 100%;
@@ -333,7 +347,7 @@
       margin-top: 10px;
       padding: 12px 15px;
 
-      border: 1px solid rgba(8,185,255,.25);
+      border: 1px solid rgba(8, 185, 255, 0.25);
       border-radius: 10px;
 
       background:
@@ -351,20 +365,20 @@
       cursor: pointer;
 
       box-shadow:
-        0 7px 18px rgba(0,0,0,.25);
+        0 7px 18px rgba(0, 0, 0, 0.25);
 
       transition:
-        transform .15s ease,
-        filter .15s ease,
-        box-shadow .15s ease;
+        transform 0.15s ease,
+        filter 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
     button:hover {
       filter: brightness(1.08);
 
       box-shadow:
-        0 9px 23px rgba(0,0,0,.3),
-        0 0 18px rgba(8,185,255,.12);
+        0 9px 23px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(8, 185, 255, 0.12);
     }
 
     button:active {
@@ -373,11 +387,12 @@
 
     button.copied {
       background: #163a4b;
-
       border-color: #275b72;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     .note {
       margin-top: 28px;
@@ -394,7 +409,9 @@
       color: #7f929f;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 620px) {
 
@@ -408,8 +425,8 @@
       }
 
       .logo {
-        width: 52px;
-        height: 52px;
+        width: 76px;
+        height: 76px;
 
         margin-bottom: 15px;
       }
@@ -474,13 +491,21 @@
 
     <header>
 
-      <div class="logo">M</div>
+      <!-- AVATAR -->
 
-      <h1>Поддержать MEDL</h1>
+      <div class="logo">
+        <img src="avatar.png" alt="MEDL">
+      </div>
+
+      <!-- TITLE -->
+
+      <h1>ПОДДЕРЖИ MEDL</h1>
+
+      <!-- DESCRIPTION -->
 
       <div class="subtitle">
-        Если вам нравится проект и вы хотите его поддержать,
-        можно отправить донат в криптовалюте.
+        Если тебе нравится MEDL и ты хочешь его поддержать,
+        можешь отправить донат в криптовалюте.
       </div>
 
       <div class="line"></div>
@@ -490,7 +515,9 @@
 
     <main class="wallets">
 
-      <!-- USDT BEP20 -->
+      <!-- =========================
+           USDT BEP20
+      ========================== -->
 
       <section class="wallet">
 
@@ -519,7 +546,8 @@
               0x1e988d51c62d285365fc78f1c06f31ef3830b540
             </div>
 
-            <button onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
+            <button
+              onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
               Копировать адрес
             </button>
 
@@ -530,7 +558,9 @@
       </section>
 
 
-      <!-- USDT TRC20 -->
+      <!-- =========================
+           USDT TRC20
+      ========================== -->
 
       <section class="wallet">
 
@@ -559,7 +589,8 @@
               TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK
             </div>
 
-            <button onclick="copyAddress(this, 'TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK')">
+            <button
+              onclick="copyAddress(this, 'TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK')">
               Копировать адрес
             </button>
 
@@ -570,7 +601,9 @@
       </section>
 
 
-      <!-- USDT ERC20 -->
+      <!-- =========================
+           USDT ERC20
+      ========================== -->
 
       <section class="wallet">
 
@@ -599,7 +632,8 @@
               0x1e988d51c62d285365fc78f1c06f31ef3830b540
             </div>
 
-            <button onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
+            <button
+              onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
               Копировать адрес
             </button>
 
@@ -610,7 +644,9 @@
       </section>
 
 
-      <!-- BITCOIN -->
+      <!-- =========================
+           BITCOIN
+      ========================== -->
 
       <section class="wallet">
 
@@ -639,7 +675,8 @@
               162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM
             </div>
 
-            <button onclick="copyAddress(this, '162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM')">
+            <button
+              onclick="copyAddress(this, '162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM')">
               Копировать адрес
             </button>
 
@@ -652,6 +689,8 @@
     </main>
 
 
+    <!-- FOOTER -->
+
     <div class="note">
       <strong>Важно:</strong>
       перед отправкой обязательно проверьте выбранную сеть и адрес кошелька.
@@ -661,6 +700,10 @@
 
 
   <script>
+
+    /* =========================
+       WALLET ADDRESSES
+    ========================== */
 
     const wallets = {
 
@@ -679,6 +722,10 @@
     };
 
 
+    /* =========================
+       GENERATE QR CODES
+    ========================== */
+
     Object.entries(wallets).forEach(([id, address]) => {
 
       new QRCode(
@@ -695,6 +742,10 @@
 
     });
 
+
+    /* =========================
+       COPY WALLET ADDRESS
+    ========================== */
 
     function copyAddress(button, address) {
 
@@ -715,6 +766,11 @@
             button.classList.remove("copied");
 
           }, 1400);
+
+        })
+        .catch(() => {
+
+          alert("Не удалось скопировать адрес. Скопируйте его вручную.");
 
         });
 
