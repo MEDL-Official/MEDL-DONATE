@@ -1,74 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>MEDL — Donate</title>
   <meta name="description" content="Поддержи MEDL криптовалютой.">
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
     :root {
       --bg: #05080d;
       --bg-soft: #08111a;
-
       --card: #0b151f;
       --card-top: #0d1a26;
-
       --border: #183044;
       --border-soft: #142536;
-
       --blue: #08b9ff;
       --blue-soft: #087eae;
-
       --text: #f4f8fb;
       --muted: #8293a2;
       --muted-2: #5d7181;
-
       --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       min-height: 100vh;
-
       background:
-        radial-gradient(
-          circle at 50% -10%,
-          rgba(8, 185, 255, 0.13),
-          transparent 34%
-        ),
-        radial-gradient(
-          circle at 0% 45%,
-          rgba(8, 126, 174, 0.07),
-          transparent 28%
-        ),
-        linear-gradient(
-          180deg,
-          #05080d 0%,
-          #06101a 50%,
-          #05080d 100%
-        );
-
+        radial-gradient(circle at 50% -10%, rgba(8,185,255,.13), transparent 34%),
+        radial-gradient(circle at 0% 45%, rgba(8,126,174,.07), transparent 28%),
+        linear-gradient(180deg, #05080d 0%, #06101a 50%, #05080d 100%);
       color: var(--text);
-
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     }
 
     .page {
@@ -76,10 +44,6 @@
       margin: 0 auto;
       padding: 50px 0 70px;
     }
-
-    /* =========================
-       HEADER
-    ========================= */
 
     header {
       text-align: center;
@@ -89,52 +53,35 @@
     .logo {
       width: 88px;
       height: 88px;
-
       margin: 0 auto 18px;
-
       display: grid;
       place-items: center;
-
       border-radius: 50%;
-
       background: #08111a;
-
-      border: 1px solid rgba(8, 185, 255, 0.28);
-
+      border: 1px solid rgba(8,185,255,.28);
       overflow: hidden;
-
-      box-shadow:
-        0 0 0 1px rgba(8, 185, 255, 0.08),
-        0 10px 35px rgba(0, 0, 0, 0.35),
-        0 0 28px rgba(8, 185, 255, 0.10);
+      box-shadow: 0 0 0 1px rgba(8,185,255,.08), 0 10px 35px rgba(0,0,0,.35), 0 0 28px rgba(8,185,255,.10);
     }
 
     .logo img {
       width: 100%;
       height: 100%;
-
       display: block;
-
       object-fit: cover;
     }
 
     h1 {
       margin: 0;
-
       font-size: clamp(28px, 4vw, 36px);
       line-height: 1.1;
-
       letter-spacing: -1px;
       font-weight: 800;
     }
 
     .subtitle {
       max-width: 570px;
-
       margin: 12px auto 0;
-
       color: var(--muted);
-
       font-size: 14px;
       line-height: 1.6;
     }
@@ -142,161 +89,103 @@
     .line {
       width: 46px;
       height: 2px;
-
       margin: 20px auto 0;
-
       border-radius: 99px;
-
       background: var(--blue);
-
-      box-shadow:
-        0 0 14px rgba(8, 185, 255, 0.45);
+      box-shadow: 0 0 14px rgba(8,185,255,.45);
     }
 
-    /* =========================
-       WALLETS
-    ========================= */
-
+    /* Wallet cards: larger spacing to separate QR codes */
     .wallets {
       display: grid;
-      gap: 18px;
+      gap: 36px;
     }
 
     .wallet {
       position: relative;
-
-      padding: 22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          var(--card-top),
-          var(--card)
-        );
-
+      padding: 24px;
+      background: linear-gradient(145deg, var(--card-top), var(--card));
       border: 1px solid var(--border);
       border-radius: 18px;
-
-      box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.22);
-
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
       overflow: hidden;
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
 
     .wallet::before {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: 0;
       bottom: 0;
-
       width: 2px;
-
-      background: linear-gradient(
-        180deg,
-        var(--blue),
-        rgba(8, 185, 255, 0.15)
-      );
+      background: linear-gradient(180deg, var(--blue), rgba(8,185,255,.15));
     }
 
     .wallet:hover {
       transform: translateY(-2px);
-
       border-color: #24506b;
-
-      box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.28),
-        0 0 28px rgba(8, 185, 255, 0.035);
+      box-shadow: 0 22px 55px rgba(0,0,0,.28), 0 0 28px rgba(8,185,255,.035);
     }
 
     .wallet-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 15px;
-
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .wallet-name {
       font-size: 18px;
       font-weight: 750;
-      letter-spacing: -0.2px;
+      letter-spacing: -.2px;
     }
 
     .network {
       margin-top: 4px;
-
       color: var(--muted);
-
       font-size: 12px;
     }
 
     .coin {
       flex-shrink: 0;
-
       padding: 6px 10px;
-
       border: 1px solid var(--border);
       border-radius: 999px;
-
       color: #a9bac6;
-
-      background: rgba(255, 255, 255, 0.02);
-
+      background: rgba(255,255,255,.02);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      letter-spacing: .3px;
     }
 
     .wallet-content {
       display: flex;
       align-items: center;
-
-      gap: 22px;
+      gap: 24px;
     }
 
-    /* =========================
-       QR
-    ========================= */
-
+    /* QR code with a wider white border */
     .qr {
-      flex: 0 0 154px;
-
-      width: 154px;
-      height: 154px;
-
+      flex: 0 0 174px;
+      width: 174px;
+      height: 174px;
       display: grid;
       place-items: center;
-
-      padding: 9px;
-
+      padding: 11px;
       background: #ffffff;
-
-      border-radius: 13px;
-
-      box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.28);
+      border: 2px solid #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.28);
     }
 
     .qr img {
       display: block;
-
-      width: 136px !important;
-      height: 136px !important;
+      width: 148px !important;
+      height: 148px !important;
+      max-width: 100%;
     }
-
-    /* =========================
-       ADDRESS
-    ========================= */
 
     .wallet-info {
       min-width: 0;
@@ -305,203 +194,124 @@
 
     .address-label {
       margin-bottom: 7px;
-
       color: var(--muted-2);
-
       font-size: 10px;
       font-weight: 700;
-
-      letter-spacing: 0.7px;
+      letter-spacing: .7px;
       text-transform: uppercase;
     }
 
     .address {
       padding: 13px 14px;
-
-      background: rgba(3, 7, 11, 0.65);
-
+      background: rgba(3,7,11,.65);
       border: 1px solid var(--border-soft);
       border-radius: 11px;
-
       color: #dce6ec;
-
-      font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Consolas,
-        monospace;
-
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
       font-size: 12px;
       line-height: 1.55;
-
       word-break: break-all;
     }
 
-    /* =========================
-       BUTTON
-    ========================= */
-
     button {
       width: 100%;
-
       margin-top: 10px;
       padding: 12px 15px;
-
-      border: 1px solid rgba(8, 185, 255, 0.25);
+      border: 1px solid rgba(8,185,255,.25);
       border-radius: 10px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #0aa8dc,
-          #087da9
-        );
-
+      background: linear-gradient(180deg, #0aa8dc, #087da9);
       color: white;
-
       font-size: 13px;
       font-weight: 750;
-
       cursor: pointer;
-
-      box-shadow:
-        0 7px 18px rgba(0, 0, 0, 0.25);
-
-      transition:
-        transform 0.15s ease,
-        filter 0.15s ease,
-        box-shadow 0.15s ease;
+      box-shadow: 0 7px 18px rgba(0,0,0,.25);
+      transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
     }
 
     button:hover {
       filter: brightness(1.08);
-
-      box-shadow:
-        0 9px 23px rgba(0, 0, 0, 0.3),
-        0 0 18px rgba(8, 185, 255, 0.12);
+      box-shadow: 0 9px 23px rgba(0,0,0,.3), 0 0 18px rgba(8,185,255,.12);
     }
 
-    button:active {
-      transform: translateY(1px);
-    }
+    button:active { transform: translateY(1px); }
 
     button.copied {
       background: #163a4b;
       border-color: #275b72;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     .note {
-      margin-top: 28px;
-
+      margin-top: 32px;
       text-align: center;
-
       color: var(--muted-2);
-
       font-size: 11px;
       line-height: 1.6;
     }
 
-    .note strong {
-      color: #7f929f;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
+    .note strong { color: #7f929f; }
 
     @media (max-width: 620px) {
-
       .page {
         width: min(100% - 22px, 920px);
         padding: 34px 0 45px;
       }
 
-      header {
-        margin-bottom: 28px;
-      }
+      header { margin-bottom: 28px; }
 
       .logo {
         width: 76px;
         height: 76px;
-
         margin-bottom: 15px;
       }
 
-      h1 {
-        font-size: 27px;
-      }
-
-      .subtitle {
-        font-size: 13px;
-      }
+      h1 { font-size: 27px; }
+      .subtitle { font-size: 13px; }
 
       .wallet {
-        padding: 17px;
+        padding: 20px 17px;
         border-radius: 15px;
       }
+
+      .wallets { gap: 30px; }
 
       .wallet-content {
         flex-direction: column;
         align-items: stretch;
+        gap: 20px;
       }
 
       .qr {
         flex: none;
-
-        width: 150px;
-        height: 150px;
-
+        width: 174px;
+        height: 174px;
         margin: 0 auto;
       }
 
-      .wallet-info {
-        width: 100%;
+      .qr img {
+        width: 148px !important;
+        height: 148px !important;
       }
 
-      .address {
-        font-size: 11px;
-      }
+      .wallet-info { width: 100%; }
+      .address { font-size: 11px; }
     }
 
     @media (max-width: 380px) {
-
-      .wallet-top {
-        align-items: flex-start;
-      }
-
-      .coin {
-        font-size: 10px;
-        padding: 5px 8px;
-      }
-
-      .wallet-name {
-        font-size: 17px;
-      }
+      .wallet-top { align-items: flex-start; }
+      .coin { font-size: 10px; padding: 5px 8px; }
+      .wallet-name { font-size: 17px; }
     }
   </style>
 </head>
 
 <body>
-
   <div class="page">
-
     <header>
-
-      <!-- AVATAR -->
-
       <div class="logo">
         <img src="avatar.png" alt="MEDL">
       </div>
 
-      <!-- TITLE -->
-
       <h1>ПОДДЕРЖИ MEDL</h1>
-
-      <!-- DESCRIPTION -->
 
       <div class="subtitle">
         Если тебе нравится MEDL и ты хочешь его поддержать,
@@ -509,274 +319,127 @@
       </div>
 
       <div class="line"></div>
-
     </header>
 
-
     <main class="wallets">
-
-      <!-- =========================
-           USDT BEP20
-      ========================== -->
-
       <section class="wallet">
-
         <div class="wallet-top">
-
           <div>
             <div class="wallet-name">USDT</div>
             <div class="network">BEP20 · BSC</div>
           </div>
-
           <div class="coin">USDT</div>
-
         </div>
 
         <div class="wallet-content">
-
           <div class="qr" id="qr-bep20"></div>
-
           <div class="wallet-info">
-
-            <div class="address-label">
-              Адрес кошелька
-            </div>
-
-            <div class="address">
-              0x1e988d51c62d285365fc78f1c06f31ef3830b540
-            </div>
-
-            <button
-              onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
-              Копировать адрес
-            </button>
-
+            <div class="address-label">Адрес кошелька</div>
+            <div class="address">0x1e988d51c62d285365fc78f1c06f31ef3830b540</div>
+            <button onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">Копировать адрес</button>
           </div>
-
         </div>
-
       </section>
 
-
-      <!-- =========================
-           USDT TRC20
-      ========================== -->
-
       <section class="wallet">
-
         <div class="wallet-top">
-
           <div>
             <div class="wallet-name">USDT</div>
             <div class="network">TRC20 · TRON</div>
           </div>
-
           <div class="coin">USDT</div>
-
         </div>
 
         <div class="wallet-content">
-
           <div class="qr" id="qr-trc20"></div>
-
           <div class="wallet-info">
-
-            <div class="address-label">
-              Адрес кошелька
-            </div>
-
-            <div class="address">
-              TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK
-            </div>
-
-            <button
-              onclick="copyAddress(this, 'TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK')">
-              Копировать адрес
-            </button>
-
+            <div class="address-label">Адрес кошелька</div>
+            <div class="address">TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK</div>
+            <button onclick="copyAddress(this, 'TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK')">Копировать адрес</button>
           </div>
-
         </div>
-
       </section>
 
-
-      <!-- =========================
-           USDT ERC20
-      ========================== -->
-
       <section class="wallet">
-
         <div class="wallet-top">
-
           <div>
             <div class="wallet-name">USDT</div>
             <div class="network">ERC20 · Ethereum</div>
           </div>
-
           <div class="coin">USDT</div>
-
         </div>
 
         <div class="wallet-content">
-
           <div class="qr" id="qr-erc20"></div>
-
           <div class="wallet-info">
-
-            <div class="address-label">
-              Адрес кошелька
-            </div>
-
-            <div class="address">
-              0x1e988d51c62d285365fc78f1c06f31ef3830b540
-            </div>
-
-            <button
-              onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">
-              Копировать адрес
-            </button>
-
+            <div class="address-label">Адрес кошелька</div>
+            <div class="address">0x1e988d51c62d285365fc78f1c06f31ef3830b540</div>
+            <button onclick="copyAddress(this, '0x1e988d51c62d285365fc78f1c06f31ef3830b540')">Копировать адрес</button>
           </div>
-
         </div>
-
       </section>
 
-
-      <!-- =========================
-           BITCOIN
-      ========================== -->
-
       <section class="wallet">
-
         <div class="wallet-top">
-
           <div>
             <div class="wallet-name">Bitcoin</div>
             <div class="network">Bitcoin Network</div>
           </div>
-
           <div class="coin">BTC</div>
-
         </div>
 
         <div class="wallet-content">
-
           <div class="qr" id="qr-btc"></div>
-
           <div class="wallet-info">
-
-            <div class="address-label">
-              Адрес кошелька
-            </div>
-
-            <div class="address">
-              162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM
-            </div>
-
-            <button
-              onclick="copyAddress(this, '162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM')">
-              Копировать адрес
-            </button>
-
+            <div class="address-label">Адрес кошелька</div>
+            <div class="address">162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM</div>
+            <button onclick="copyAddress(this, '162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM')">Копировать адрес</button>
           </div>
-
         </div>
-
       </section>
-
     </main>
-
-
-    <!-- FOOTER -->
 
     <div class="note">
       <strong>Важно:</strong>
       перед отправкой обязательно проверьте выбранную сеть и адрес кошелька.
     </div>
-
   </div>
 
-
   <script>
-
-    /* =========================
-       WALLET ADDRESSES
-    ========================== */
-
     const wallets = {
-
-      "qr-bep20":
-        "0x1e988d51c62d285365fc78f1c06f31ef3830b540",
-
-      "qr-trc20":
-        "TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK",
-
-      "qr-erc20":
-        "0x1e988d51c62d285365fc78f1c06f31ef3830b540",
-
-      "qr-btc":
-        "162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM"
-
+      "qr-bep20": "0x1e988d51c62d285365fc78f1c06f31ef3830b540",
+      "qr-trc20": "TF97BFSrPByYBkfmt6XL5BFJmTMyDPRsPK",
+      "qr-erc20": "0x1e988d51c62d285365fc78f1c06f31ef3830b540",
+      "qr-btc": "162q7iEfMdhiJJCnE2xKZ1TfWjFBLomhM"
     };
 
-
-    /* =========================
-       GENERATE QR CODES
-    ========================== */
-
     Object.entries(wallets).forEach(([id, address]) => {
-
-      new QRCode(
-        document.getElementById(id),
-        {
-          text: address,
-          width: 136,
-          height: 136,
-          colorDark: "#000000",
-          colorLight: "#ffffff",
-          correctLevel: QRCode.CorrectLevel.M
-        }
-      );
-
+      new QRCode(document.getElementById(id), {
+        text: address,
+        width: 148,
+        height: 148,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
     });
 
-
-    /* =========================
-       COPY WALLET ADDRESS
-    ========================== */
-
     function copyAddress(button, address) {
-
-      navigator.clipboard
-        .writeText(address)
+      navigator.clipboard.writeText(address)
         .then(() => {
-
           const oldText = button.textContent;
-
           button.textContent = "Скопировано ✓";
-
           button.classList.add("copied");
 
           setTimeout(() => {
-
             button.textContent = oldText;
-
             button.classList.remove("copied");
-
           }, 1400);
-
         })
         .catch(() => {
-
           alert("Не удалось скопировать адрес. Скопируйте его вручную.");
-
         });
-
     }
-
   </script>
-
 </body>
 </html>
